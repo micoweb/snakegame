@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f5f5f7">
+<title>Snake — Apple Style</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="nav">
+    <div class="brand"><span class="brand-dot"></span><span>Snake</span></div>
+    <button id="themeBtn" class="icon-btn" aria-label="Toggle appearance">☾</button>
+  </header>
+
+  <main>
+    <section id="home" class="screen active">
+      <div class="hero">
+        <div class="hero-kicker">APPLE-INSPIRED ARCADE</div>
+        <h1>Classic.<br><em>Reimagined.</em></h1>
+        <p>A polished snake adventure with maps, modes, themes and achievements.</p>
+      </div>
+
+      <div class="hero-card">
+        <div class="snake-orb">🐍</div>
+        <div>
+          <span class="eyebrow">CONTINUE</span>
+          <h2 id="continueTitle">Meadow</h2>
+          <p id="continueSub">Level 1 · Classic</p>
+        </div>
+        <button id="continueBtn" class="round-arrow">→</button>
+      </div>
+
+      <div class="section-head"><h3>Game Modes</h3><button data-screen="modes" class="text-btn">See All</button></div>
+      <div class="mode-grid">
+        <button class="mode-card selected" data-mode="classic"><span>∞</span><b>Classic</b><small>Grow & survive</small></button>
+        <button class="mode-card" data-mode="time"><span>◷</span><b>Time Rush</b><small>60 seconds</small></button>
+        <button class="mode-card" data-mode="walls"><span>◇</span><b>Maze Run</b><small>Map obstacles</small></button>
+        <button class="mode-card" data-mode="zen"><span>☼</span><b>Zen</b><small>No pressure</small></button>
+      </div>
+
+      <div class="section-head"><h3>Your Progress</h3></div>
+      <div class="progress-card">
+        <div><b id="levelText">1</b><span>Current level</span></div>
+        <div class="progress-line"><i id="xpBar"></i></div>
+        <span id="xpText">0 / 5</span>
+      </div>
+    </section>
+
+    <section id="maps" class="screen">
+      <div class="page-head"><button class="back" data-screen="home">‹</button><div><span class="eyebrow">ADVENTURE</span><h1>Maps</h1></div></div>
+      <p class="lead">Complete a map to unlock the next world.</p>
+      <div id="mapList" class="map-list"></div>
+    </section>
+
+    <section id="modes" class="screen">
+      <div class="page-head"><button class="back" data-screen="home">‹</button><div><span class="eyebrow">PLAY YOUR WAY</span><h1>Modes</h1></div></div>
+      <div class="mode-list">
+        <button class="big-mode" data-mode="classic"><span>∞</span><div><b>Classic</b><small>Eat, grow and beat your best.</small></div><i>›</i></button>
+        <button class="big-mode" data-mode="time"><span>◷</span><div><b>Time Rush</b><small>Score as much as possible before time runs out.</small></div><i>›</i></button>
+        <button class="big-mode" data-mode="walls"><span>◇</span><div><b>Maze Run</b><small>Navigate changing obstacles and tight corners.</small></div><i>›</i></button>
+        <button class="big-mode" data-mode="zen"><span>☼</span><div><b>Zen</b><small>A calm, endless run with no game over from walls.</small></div><i>›</i></button>
+      </div>
+    </section>
+
+    <section id="achievements" class="screen">
+      <div class="page-head"><button class="back" data-screen="home">‹</button><div><span class="eyebrow">COLLECTION</span><h1>Achievements</h1></div></div>
+      <div id="achievementList" class="achievement-list"></div>
+    </section>
+
+    <section id="game" class="screen game-screen">
+      <div class="game-top">
+        <button id="quitBtn" class="back">‹</button>
+        <div><span id="gameModeLabel">Classic</span><b id="gameMapLabel">Meadow</b></div>
+        <button id="pauseBtn" class="icon-btn">Ⅱ</button>
+      </div>
+      <div class="game-stats">
+        <div><small>SCORE</small><b id="score">0</b></div>
+        <div><small>BEST</small><b id="best">0</b></div>
+        <div id="timerBox"><small>LEVEL</small><b id="gameLevel">1</b></div>
+      </div>
+      <div class="canvas-wrap"><canvas id="canvas" width="600" height="600"></canvas><div id="pauseOverlay" class="pause-overlay">Paused</div></div>
+      <div class="dpad">
+        <button data-dir="up">↑</button>
+        <div><button data-dir="left">←</button><button data-dir="down">↓</button><button data-dir="right">→</button></div>
+      </div>
+      <p class="game-tip">Arrow keys / WASD · Swipe on mobile</p>
+    </section>
+  </main>
+
+  <nav class="tabbar">
+    <button class="tab active" data-screen="home"><span>⌂</span>Home</button>
+    <button class="tab" data-screen="maps"><span>▦</span>Maps</button>
+    <button class="tab" data-screen="achievements"><span>◇</span>Awards</button>
+  </nav>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
